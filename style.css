@@ -245,10 +245,15 @@ footer ul li .fas {
   }
 
   .restaurants {
-    height: 1300px;
+    height: 1280px;
+  }
+  .restaurants h1 {
+    padding-left: 30px;
   }
   .restaurants-flex {
     height: 1200px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .restaurants-flex__item {
     max-width: 400px;
@@ -262,6 +267,59 @@ footer ul li .fas {
   }
   .restaurants-flex__item h2 {
     font-size: 1.4em;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 2500px) {
+  body {
+    max-width: 1900px;
+    width: 100%;
+  }
+
+  .booking {
+    height: 260px;
+  }
+  .booking__flex {
+    height: 210px;
+  }
+  .booking__flex__explore {
+    max-width: 300px;
+    width: 100%;
+    height: 35px;
+    font-size: 1.1em;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+
+  .operation {
+    height: 200px;
+  }
+  .operation h1 {
+    padding-left: 60px;
+    font-size: 1.8em;
+    margin: 0;
+  }
+  .operation-flex {
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .operation-flex__item {
+    max-width: 300px;
+    width: 100%;
+    padding-right: 60px;
+  }
+
+  .restaurants {
+    height: 400px;
+  }
+  .restaurants h1 {
+    padding-left: 60px;
+    font-size: 1.8em;
+  }
+  .restaurants-flex {
+    height: 300px;
+    flex-direction: row;
   }
 }
 
