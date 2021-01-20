@@ -4,9 +4,6 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
-body h1 {
-  font-size: 1.4em;
-}
 body header {
   display: flex;
   justify-content: center;
@@ -16,6 +13,9 @@ body header img {
   height: auto;
   margin: auto;
 }
+body h1 {
+  font-size: 1.4em;
+}
 
 .restaurants img {
   width: 300px;
@@ -24,7 +24,7 @@ body header img {
 
 .booking {
   background-color: #F6F6F6;
-  height: 350px;
+  height: 315px;
 }
 .booking__location {
   display: flex;
@@ -45,6 +45,7 @@ body header img {
 }
 .booking__flex h1 {
   text-align: center;
+  padding-top: 20px;
 }
 .booking__flex p {
   text-align: center;
@@ -63,6 +64,8 @@ body header img {
 }
 .operation h1 {
   padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .operation-flex {
   display: flex;
@@ -126,6 +129,7 @@ body header img {
   max-width: 290px;
   width: 100%;
   height: 220px;
+  position: relative;
 }
 .restaurants-flex__item img {
   border-radius: 20px 20px 0px 0px;
@@ -145,17 +149,120 @@ body header img {
   margin-top: 0px;
   margin-bottom: 5px;
 }
+.restaurants-flex__item .far {
+  font-size: 1.4em;
+  position: absolute;
+  right: 20px;
+  bottom: 25px;
+}
+.restaurants-flex__item h3 {
+  font-weight: 500;
+  font-size: 1em;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  border: 1px transparent solid;
+  background-color: #99E2D0;
+  color: #239C7E;
+  padding: 6px;
+  border-radius: 2px;
+}
 
 footer {
   background-color: #353535;
   color: white;
   line-height: 1.5em;
 }
-footer li {
+footer h2 {
+  font-family: "shrikhand", sans-serif;
+  font-weight: normal;
+  margin-top: 0px;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+footer ul {
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+footer ul li {
   list-style: none;
 }
-footer li .fas {
+footer ul li .fas {
   padding-right: 10px;
+}
+
+@media screen and (min-width: 501px) and (max-width: 1200px) {
+  body {
+    max-width: 1200px;
+    width: 100%;
+  }
+  body header img {
+    width: 300px;
+  }
+  body h1 {
+    font-size: 2em;
+  }
+  body p {
+    font-size: 1.3em;
+  }
+
+  .booking {
+    height: 370px;
+  }
+  .booking__location .fas {
+    font-size: 1.4em;
+  }
+  .booking__flex__explore {
+    font-size: 1.4em;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    width: 300px;
+    height: 45px;
+  }
+
+  .operation {
+    height: 450px;
+  }
+  .operation h1 {
+    padding-left: 30px;
+  }
+  .operation-flex {
+    height: 350px;
+  }
+  .operation-flex__item {
+    max-width: 390px;
+    width: 100%;
+    max-height: 90px;
+    height: 100%;
+  }
+  .operation-flex__item .fas {
+    font-size: 1.4em;
+  }
+  .operation-flex__item__number {
+    padding-left: 6px;
+    padding-right: 11px;
+  }
+
+  .restaurants {
+    height: 1300px;
+  }
+  .restaurants-flex {
+    height: 1200px;
+  }
+  .restaurants-flex__item {
+    max-width: 400px;
+    width: 100%;
+    height: 275px;
+  }
+  .restaurants-flex__item img {
+    max-width: 400px;
+    width: 100%;
+    height: 200px;
+  }
+  .restaurants-flex__item h2 {
+    font-size: 1.4em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
