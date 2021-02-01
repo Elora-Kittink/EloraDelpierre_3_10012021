@@ -19,7 +19,7 @@
 }
 
 
-.menus {
+/*.menus {
     border: 1px blue solid;
     width: 100px;
     height: 100px;
@@ -30,7 +30,7 @@
         border: 1px black solid;
         animation: apparition 1s;
     }
-}
+}*/
 
 /*.vegan-menu {
     &__parmentier {
@@ -104,5 +104,41 @@
         transform: scaleX(1); 
         transform: rotate(360deg);        
     }
+    
+}
+
+.menu {
+    height: 450px;
+    h2 {
+        font-weight: 400;
+        font-variant: small-caps;
+    }
+    &-flex {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &__item {
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            transition: width 1000ms;
+            &:hover .effet{
+                width: 80px;
+                > .fa-check-circle {
+                    visibility: visible;
+                    animation : rotation 400ms;
+                    animation-delay: 100ms;
+                }
+            }
+            h3 {
+                margin: 10px;
+            }
+            p {
+                margin: 10px;
+            }
+            
+        }
+    }   
     
 }

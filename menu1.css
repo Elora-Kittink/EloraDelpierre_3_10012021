@@ -8,6 +8,14 @@
     opacity: 1;
   }
 }
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 body {
   max-width: 500px;
   width: 100%;
@@ -68,6 +76,14 @@ section h1 {
   border-radius: 20px;
   position: relative;
   transition: width 1000ms;
+}
+.menu-flex__item:hover .effet {
+  width: 80px;
+}
+.menu-flex__item:hover .effet > .fa-check-circle {
+  visibility: visible;
+  animation: rotation 400ms;
+  animation-delay: 100ms;
 }
 .menu-flex__item h3 {
   margin: 10px;
@@ -130,16 +146,26 @@ footer ul li .fas {
   animation-delay: 400ms;
 }
 
-.essai {
-  border: 1px black solid;
+.effet {
+  background-color: #99E2D0;
+  height: 101px;
+  border-radius: 0px 20px 20px 0px;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: -10px;
+  top: -10px;
   bottom: 0px;
-  transition: width 1000ms;
+  width: 0;
+  transition-property: width;
+  transition-duration: 500ms;
 }
-.essai:hover {
-  width: 60px;
+
+.fa-check-circle {
+  visibility: hidden;
+  font-size: 1.3em;
+  padding-top: 40px;
+  padding-left: 20px;
+  color: white;
+  transform-origin: 79% 79%;
 }
 
 /*# sourceMappingURL=menu1.css.map */
