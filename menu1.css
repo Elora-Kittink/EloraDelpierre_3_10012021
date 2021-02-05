@@ -16,40 +16,44 @@
     transform: rotate(360deg);
   }
 }
-body {
+.body-menu {
   max-width: 500px;
   width: 100%;
-  height: 4000px;
   font-family: "Roboto", sans-serif;
   margin: 0;
+  position: relative;
 }
-body header {
+.body-menu header {
   display: flex;
   justify-content: flex-start;
 }
-body header div {
+.body-menu header div {
   width: 60px;
   padding-top: 20px;
   padding-left: 15px;
 }
-body header img {
+.body-menu header img {
   width: 150px;
   height: auto;
   margin: auto;
 }
-body h1 {
+.body-menu h1 {
   font-size: 1.4em;
 }
-
-img {
+.body-menu img {
   width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.body-menu a {
+  text-decoration: none;
 }
 
 section {
   height: 1600px;
   background-color: #F6F6F6;
   border-radius: 40px 40px 0px 0px;
-  padding-top: 20px;
+  margin-top: -60px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -64,6 +68,13 @@ section h1 {
 .menu h2 {
   font-weight: 400;
   font-variant: small-caps;
+  margin-bottom: 0px;
+}
+.menu hr {
+  border: 2px #99E2D0 solid;
+  width: 40px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 .menu-flex {
   height: 400px;
@@ -72,40 +83,88 @@ section h1 {
   justify-content: space-around;
 }
 .menu-flex__item {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
   background-color: white;
   border-radius: 20px;
   position: relative;
-  transition: width 1000ms;
+  transition: width 200ms ease-in-out;
 }
-.menu-flex__item:hover .effet {
+.menu-flex__item:hover .menu-flex__item-price {
+  transform: translateX(-90px);
+}
+.menu-flex__item:hover .menu-flex__item-anim {
   width: 80px;
 }
-.menu-flex__item:hover .effet > .fa-check-circle {
+.menu-flex__item:hover .menu-flex__item-anim > .fa-check-circle {
   visibility: visible;
   animation: rotation 400ms;
-  animation-delay: 100ms;
+  animation-delay: 600ms;
 }
-.menu-flex__item h3 {
-  margin: 10px;
+.menu-flex__item-text {
+  padding-left: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /*h3 {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+  }
+  p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+  }*/
 }
-.menu-flex__item p {
-  margin: 10px;
+.menu-flex__item-price {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  padding-top: 20px;
+  right: 10px;
+  transition: transform 300ms ease-out;
 }
 
-.booking {
-  margin-top: 30px;
-  height: 100px;
-  text-align: center;
-}
 .booking-button {
+  position: relative;
+  height: 58px;
+  width: 315px;
+}
+.booking-button__normal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
   text-decoration: none;
   color: white;
   background: linear-gradient(to bottom right, #9356DC, #FF79DA);
   border-radius: 30px;
   padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 70px;
-  padding-right: 70px;
+  text-align: center;
+}
+.booking-button__normal:hover {
+  opacity: 0;
+}
+.booking-button__light {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to bottom right, #a87ddb, #fc97df);
+  border-radius: 30px;
+  padding-top: 18px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 200ms;
 }
 
 footer {
@@ -130,6 +189,10 @@ footer ul li {
 footer ul li .fas {
   padding-right: 10px;
 }
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
 
 /* ANIMATIONS*/
 .menu-flex__item:nth-child(1) {
@@ -146,26 +209,26 @@ footer ul li .fas {
   animation-delay: 400ms;
 }
 
-.effet {
+.menu-flex__item-anim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #99E2D0;
-  height: 101px;
+  height: 100%;
+  align-self: flex-end;
+  box-sizing: border-box;
   border-radius: 0px 20px 20px 0px;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  bottom: 0px;
+  margin: 0px;
   width: 0;
   transition-property: width;
-  transition-duration: 500ms;
+  transition-duration: 600ms;
+  transition-timing-function: ease-in-out;
 }
 
 .fa-check-circle {
   visibility: hidden;
   font-size: 1.3em;
-  padding-top: 40px;
-  padding-left: 20px;
   color: white;
-  transform-origin: 79% 79%;
 }
 
 /*# sourceMappingURL=menu1.css.map */
