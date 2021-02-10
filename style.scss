@@ -8,6 +8,10 @@ $thirdly: #99E2D0;
 $primary-light: #a87ddb;
 $secondary-light: #fc97df;
 
+@mixin shadow {
+    box-shadow: 3px 3px 8px #cccccc;
+}
+
 /*animations accueil*/
 
 @keyframes loader {
@@ -16,6 +20,11 @@ $secondary-light: #fc97df;
         z-index: 10;
     }
     
+    90% {
+        opacity: 0;
+        z-index: 10;
+    }
+
     100% {
         opacity: 0;
         z-index: -10;
@@ -24,10 +33,12 @@ $secondary-light: #fc97df;
 
 @keyframes spin {
     0%{
-    transform: rotate(0deg);
+    transform: rotate(0turn);
+    opacity: 1;
     }
     100%{
-    transform: rotate(360deg);
+    transform: rotate(2turn);
+    opacity: 0;
     }
 }
 
@@ -70,14 +81,15 @@ $secondary-light: #fc97df;
         width: 100%;
         height: 100%;
         background-color: rgba(153, 226, 208, 0.3);
-        position: absolute;
+        position: fixed;
         top: 0px;
         right: 0px;
         bottom: 0px;
         left: 0px;
         animation-name: loader;
-        animation-duration: 6s;
-        animation-fill-mode: forwards;        
+        animation-duration: 5s;
+        animation-fill-mode: forwards;    
+        animation-timing-function: ease-in;    
         &-spiner {
             width: 50px;
             height: 50px;
@@ -87,7 +99,8 @@ $secondary-light: #fc97df;
             border-bottom-color: $secondary;
             margin-top: 400px;
             position: fixed;   
-            animation: spin 2s linear infinite;     
+            animation: spin 2s linear 1 forwards;  
+   
             
         }
     }
@@ -142,7 +155,7 @@ $secondary-light: #fc97df;
         &-button {
             position: relative;
             height: 58px;
-            width: 315px;
+            width: 290px;
             .booking-button__normal {
                 position: absolute;
                 top: 0px;
@@ -154,8 +167,8 @@ $secondary-light: #fc97df;
                 color: white;
                 background : linear-gradient(to bottom right, $primary, $secondary);
                 border-radius: 30px;
-                padding-top: 18px;                
-                padding-left: 70px;                
+                padding-top: 18px;    
+                box-shadow: 4px 4px 8px #dddddd;                            
                 &:hover {
                     opacity: 0;
                 }
@@ -172,10 +185,10 @@ $secondary-light: #fc97df;
             color: white;
             background : linear-gradient(to bottom right, $primary-light, $secondary-light);
             border-radius: 30px;
-            padding-top: 18px;            
-            padding-left: 70px;            
+            padding-top: 18px;                      
             opacity: 1;
             transition: opacity 200ms;
+            box-shadow: 4px 4px 8px #777777;
             
             }
         }
@@ -211,6 +224,7 @@ $secondary-light: #fc97df;
             box-shadow: 2px 5px 10px #C6C6C6;
             text-align: center;
             position: relative;
+            @include shadow;
             &__number {
                 color: white;
                 border: 1px transparent solid;
@@ -248,14 +262,14 @@ $secondary-light: #fc97df;
         justify-content: space-around;
         height: 1000px;
         &__item {
-            background-color: white;
-            border: 1px transparent solid;
+            background-color: white;            
             border-radius: 20px;
             max-width: 290px;
             width: 100%;
             height: 220px;
             position: relative;
             color: black;
+            @include shadow;
             img {
                 border-radius: 20px 20px 0px 0px;
                 max-width: 300px;
@@ -353,6 +367,10 @@ $secondary-light: #fc97df;
      }
     h1 {
         font-size: 1.4em;
+        padding-top: 20px;
+    }
+    .fa-heart {
+        margin-left: 30px;
     }
     img {
         width: 100%;
@@ -399,6 +417,7 @@ section {
         flex-direction: column;
         justify-content: space-around;
         &__item {
+            @include shadow;
             display: flex;
             justify-content: space-between;
             overflow: hidden;
@@ -406,9 +425,6 @@ section {
             border-radius: 20px;
             position: relative;
             transition: width 200ms ease-in-out;
-            &:hover .menu-flex__item-price {
-                transform: translateX(-90px);
-            }
             &:hover .menu-flex__item-anim {
                 width: 80px;
                 > .fa-check-circle {
@@ -418,11 +434,12 @@ section {
                 }
             }
             &-text {
+                width: 100%;
                 padding-left: 15px;
                 text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;
-                /*h3 {
+                h3 {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;
@@ -431,27 +448,30 @@ section {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;
-                }*/
+                }
             }
             &-price {
                 width: 40px;
                 height: 100%;
-                position: absolute;
-                right: 0px;
-                padding-top: 20px;
-                right: 10px;
-                transition: transform 300ms ease-out;
+                position: relative;                                
+                display: flex;
+
             }
             
         }
     }   
     
 }
+
+
 .booking-button {
     position: relative;
     height: 58px;
-    width: 315px;
+    width: 290px;
+    margin: 0 auto;
+    margin-top: 40px;
     &__normal {
+        box-shadow: 4px 4px 8px #bbbbbb;
         position: absolute;
         top: 0px;
         right: 0px;
@@ -470,6 +490,7 @@ section {
         
     }
     &__light{
+        box-shadow: 4px 4px 8px #777777;
         position: absolute;
         top: 0px;
         right: 0px;
@@ -512,7 +533,7 @@ section {
         box-sizing: border-box;
         border-radius: 0px 20px 20px 0px;
         margin: 0px;
-        width: 0;
+        width: 0px;
         transition-property: width;
         transition-duration: 600ms; 
         transition-timing-function: ease-in-out;  
@@ -631,8 +652,7 @@ footer {
         }
         &-flex {
             height: 1200px;
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
             &__item {
                 max-width: 400px;
                 width: 100%;
