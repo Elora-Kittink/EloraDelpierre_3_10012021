@@ -91,6 +91,9 @@
 }
 .body-home a {
   text-decoration: none;
+  max-width: 290px;
+  /*bug sur firefox*/
+  width: 100%;
 }
 
 .restaurants img {
@@ -413,7 +416,11 @@ section h1 {
   white-space: nowrap;
   overflow: hidden;
 }
-.menu-flex__item-price {
+.menu-flex__item .menu-flex__item-box {
+  display: flex;
+  align-self: flex-end;
+}
+.menu-flex__item .menu-flex__item-box-price {
   width: 40px;
   height: 100%;
   position: relative;

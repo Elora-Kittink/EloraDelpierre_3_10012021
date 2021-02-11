@@ -117,7 +117,9 @@ $secondary-light: #fc97df;
         font-size: 1.4em;
     }
     a {
-        text-decoration: none;
+        text-decoration: none; 
+        max-width: 290px;   /*bug sur firefox*/
+        width: 100%;
     }
 }
 
@@ -450,13 +452,18 @@ section {
                     overflow: hidden;
                 }
             }
-            &-price {
-                width: 40px;
-                height: 100%;
-                position: relative;                                
+            .menu-flex__item-box {
                 display: flex;
-
+                align-self: flex-end;
+                &-price {
+                    width: 40px;
+                    height: 100%;
+                    position: relative;                                
+                    display: flex;
+    
+                }
             }
+            
             
         }
     }   
