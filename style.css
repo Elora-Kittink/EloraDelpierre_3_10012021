@@ -93,7 +93,7 @@
 }
 .body-home a {
   text-decoration: none;
-  max-width: 340px;
+  max-width: 380px;
   /*bug sur firefox*/
   width: 100%;
 }
