@@ -118,7 +118,7 @@ $secondary-light: #fc97df;
     }
     a {
         text-decoration: none; 
-        max-width: 380px;   /*bug sur firefox*/
+        max-width: 300px;   /*bug sur firefox*/
         width: 100%;
     }
 }
@@ -700,6 +700,10 @@ footer {
         h1 {
             padding-left: 30px;
         }
+        a {
+            max-width: 380px;   
+            width: 100%;
+        }
         &-flex {
             height: 1200px;
             flex-direction: column;
@@ -781,6 +785,10 @@ footer {
             &__item {
 
             }
+        }
+        a {
+            max-width: 380px;
+            width: 100%;
         }
     }
 }
